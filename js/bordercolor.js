@@ -1,4 +1,4 @@
-(function() {
+;(function() {
     var borderColorArsenal = [
             '#DDD',
             '#DCDCDC',

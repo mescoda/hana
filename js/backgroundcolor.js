@@ -1,11 +1,4 @@
-/*
-TODO
-hover block 的时候显示颜色值的 tooltip
-click 默认复制: 这个目前还是只能用 flash 做到
-分析颜色值 按照 rainbow 排序 根据底色设定 hover 时候显示的有较大区分度的颜色值
- */
-
-(function() {
+;(function() {
     var backgroundColorArsenal = [
             '#83BF73',
             '#7BC9B6',
@@ -102,7 +95,7 @@ click 默认复制: 这个目前还是只能用 flash 做到
     for(i = 0, iLen = cleanColorArray.length; i < iLen; i++) {
         backgroundColorContent.appendChild( generateBlock(i, cleanColorArray[i]) );
     }
-    
+
     /*backgroundColorBlock = backgroundColorContent.getElementsByTagName('div');
     for(j = 0, jLen = backgroundColorBlock.length; j < jLen; j++) {
         backgroundColorBlock[j].addEventListener('click', function() {

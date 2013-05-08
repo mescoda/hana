@@ -11,11 +11,6 @@ var a = ['123', 'ebe', '#DDD', 'dddddd', '', 'ggg', '#DDDDDD', 'E1D0A8', '#e1d0A
 yuki.cleanColor(a); // ["#123", "#EBE", "#DDD", "#E1D0A8"]
  */
 
-/*
-TODO:
-support HTML color & X11 color names & rgb & rgba
- */
-
 ;(function() {
     window.yuki = window.yuki || {};
 })();

@@ -1,10 +1,4 @@
-/*
-TODO
-1. 添加其他几种情况 color 的 style: 是不是直接用两种情况好了 link hover 然后各个里面都是一堆的 css
-2. link 的 textContent 随机内容
- */
-
-(function() {
+;(function() {
     var links = [
             /*{
                 link: '#EA0000',
