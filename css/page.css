@@ -1,0 +1,31 @@
+@charset "utf-8";
+body {
+    -webkit-font-smoothing: antialiased;
+}
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+.header {
+    margin: 50px 0;
+    text-align: center;
+}
+.header h1 {
+    font-size: 40px;
+    color: #333332;
+    text-transform: capitalize;
+}
+.header h2 {
+    font-size: 20px;
+    color: rgba(52, 73, 94, 0.3);
+}
+.mod {
+    margin-bottom: 40px;
+}
+.mod h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #555;
+    background-color: rgba(237, 237, 235, 0.5);
+}
