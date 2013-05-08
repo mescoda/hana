@@ -1,1 +1,2 @@
-# Yuki: UI elements based on CSS
+# Yuki
+UI elements based on CSS
