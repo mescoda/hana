@@ -92,6 +92,7 @@
         return div;
     }
     cleanColorArray = yuki.cleanColor(backgroundColorArsenal);
+    cleanColorArray = yuki.sortColors(cleanColorArray, 'luminance');
     for(i = 0, iLen = cleanColorArray.length; i < iLen; i++) {
         backgroundColorContent.appendChild( generateBlock(i, cleanColorArray[i]) );
     }
