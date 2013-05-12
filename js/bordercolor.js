@@ -25,7 +25,7 @@
         return div;
     }
 
-    cleanColorArray = yuki.cleanColor(borderColorArsenal);
+    cleanColorArray = yuki.cleanColors(borderColorArsenal);
     
     for (i = 0, iLen = borderColorArsenal.length; i < iLen; i++) {
         borderColorContent.appendChild(generateBlock(i, borderColorArsenal[i]));

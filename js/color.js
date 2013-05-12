@@ -2,6 +2,19 @@
     window.yuki = window.yuki || {};
 })();
 
+/*
+0. 检查是否是 color
+1. 统一格式: 大写, 去掉 #
+2. 将可以简化的简化为3位
+3. 去重
+4. 添加 #
+ */
+
+/*
+Example:
+var a = ['123', 'ebe', '#DDD', 'dddddd', '', 'ggg', '#DDDDDD', 'E1D0A8', '#e1d0A8'];
+yuki.cleanColors(a); // ["#123", "#EBE", "#DDD", "#E1D0A8"]
+ */
 (function(yuki) {
     var rColorHex = /^#?([\da-f]{3}){1,2}$/i;
     function formatColor(color) {
@@ -16,8 +29,34 @@
         }
         return color;
     }
+    function cleanColors(color) {
+        if(typeof color === 'string') {
+            if(rColorHex.test(color)) {
+                return '#' + simplifyColor( formatColor(color) );    
+            } else {
+                return '';
+            }
+        }
+        var result = [],
+            temp;
+        for(var i = 0, iLen = color.length; i < iLen; i++) {
+            if(rColorHex.test(color[i])) {
+                temp = simplifyColor( formatColor(color[i]) );
+                if(result.indexOf('#' + temp) === -1) {
+                    result.push('#' + temp);
+                }
+            }
+        }
+        return result;
+    }
+    yuki.cleanColors = cleanColors;
+})(yuki);
+
+
+
+(function(yuki) {
     // 将 hex 转化为不带 # 的 6 位大写 hex
-    function formatHex(hex) {
+    function formatSingleHex(hex) {
         var result;
         if(!/^#?([\da-f]{3}){1,2}$/i.test(hex)) {
             return;
@@ -32,35 +71,14 @@
         return hex.toUpperCase();
     }
 
-    function cleanHexArray(color) {
-        if(typeof color === 'string') {
-            if(rColorHex.test(color)) {
-                return simplifyColor( formatColor(color) );    
-            } else {
-                return '';
-            }
-        }
-        var bigArray = [],
-            result = [],
-            temp;
-        for(var i = 0, iLen = color.length; i < iLen; i++) {
-            if(rColorHex.test(color[i])) {
-                temp = simplifyColor( formatColor(color[i]) );
-                if(bigArray.indexOf(temp) === -1) {
-                    bigArray.push(temp);
-                }
-            }
-        }
-        for(var i = 0, iLen = bigArray.length; i < iLen; i++) {
-            result.push(formatHex(bigArray[i]));
+    function formatHexArray(hexArray) {
+        var result = [];
+        for(var i = 0, iLen = hexArray.length; i < iLen; i++) {
+            result.push( formatSingleHex(hexArray[i]) );
         }
         return result;
     }
-    yuki.cleanHexArray = cleanHexArray;
-})(yuki);
 
-(function(yuki) {
-    
     // 将不带 # 的 6 位 hex 转化为 rgb 数组
     function hexToRgb(hex) {
         var rgb = [];
@@ -235,7 +253,10 @@
             })(),
             result = [];
         
-        hexArray = yuki.cleanHexArray(hexArray);
+        // 传入的 hexArray 是被 clean 过的带有 # 的简写 大写 hex
+        // 现在需要转化为不带 # 的统一 6 位大写
+        hexArray = formatHexArray(hexArray);
+
         makeColorsArray(hexArray);
         sortedColors = colors.sort(compareColor);
         for(var i = 0, iLen = sortedColors.length; i < iLen; i++) {

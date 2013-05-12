@@ -81,7 +81,8 @@
         iLen,
         j,
         jLen,
-        cleanColorArray;
+        cleanedColorArray = [],
+        sortedColorArray = [];
     function generateBlock(num, color) {
         var div = document.createElement('div'),
             span = document.createElement('span');
@@ -91,10 +92,10 @@
         div.appendChild(span);
         return div;
     }
-    cleanColorArray = yuki.cleanColor(backgroundColorArsenal);
-    cleanColorArray = yuki.sortColors(cleanColorArray, 'luminance');
-    for(i = 0, iLen = cleanColorArray.length; i < iLen; i++) {
-        backgroundColorContent.appendChild( generateBlock(i, cleanColorArray[i]) );
+    cleanedColorArray = yuki.cleanColors(backgroundColorArsenal);
+    sortedColorArray = yuki.sortColors(cleanedColorArray, 'l');
+    for(i = 0, iLen = sortedColorArray.length; i < iLen; i++) {
+        backgroundColorContent.appendChild( generateBlock(i, sortedColorArray[i]) );
     }
 
     /*backgroundColorBlock = backgroundColorContent.getElementsByTagName('div');
