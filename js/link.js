@@ -29,6 +29,12 @@
                 hoverColor: '#FF1E00',
                 linkTextDecoration: 'none',
                 hoverTextDecoration: 'none'
+            },
+            {
+                linkColor: '#333332',
+                hoverColor: '#57AD68',
+                linkTextDecoration: 'underline',
+                hoverTextDecoration: 'underline'
             }
         ],
         linkContent = document.querySelector('.link-content'),
