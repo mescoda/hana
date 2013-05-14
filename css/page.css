@@ -15,7 +15,7 @@ body {
     color: #333332;
     text-transform: capitalize;
 }
-.header h2 {
+.header p {
     font-size: 20px;
     color: rgba(52, 73, 94, 0.3);
 }
