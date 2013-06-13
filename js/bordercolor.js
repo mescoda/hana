@@ -8,7 +8,8 @@
             '#D6D6D6',
             '#FAFAFA',
             '#EBEBEB',
-            '#E1D0A8'
+            '#E1D0A8',
+            '#AFDCF8'
         ],
         borderColorContent = document.querySelector('.bordercolor-content'),
         borderColorBlock,

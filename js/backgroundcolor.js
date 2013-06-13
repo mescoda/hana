@@ -70,7 +70,11 @@
             '#F2F6E4',
             '#90B11F',
             '#369',
-            '#FEF200'
+            '#FEF200',
+            '#6CBFEE',
+            '#3594CB',
+            '#AFDCF8',
+            '#91CFA1'
         ],
         backgroundColorContent = document.querySelector('.backgroundcolor-content'),
         backgroundColorBlock,
