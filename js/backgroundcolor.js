@@ -77,7 +77,19 @@
             '#91CFA1',
             '#3E80BC',
             '#BC3E3E',
-            '#19232C'
+            '#19232C',
+            '#4EA9F4',
+            '#5BD77B',
+            '#F6E06A',
+            '#EFA154',
+            '#ED4676',
+            '#161616',
+            '#B6B6B6'
+            /*
+            rgb(78, 169, 244)
+            rgb(247, 222, 113)
+            rgb(236, 71, 119)
+             */
         ],
         backgroundColorContent = document.querySelector('.backgroundcolor-content'),
         backgroundColorBlock,
